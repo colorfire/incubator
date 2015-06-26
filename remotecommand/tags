@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BaseHTTPServer	gfs.py	/^import BaseHTTPServer$/;"	i
+BaseHTTPServer	git5_proxy.py	/^import BaseHTTPServer$/;"	i
+GitSubmitHandler	gfs.py	/^class GitSubmitHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):$/;"	c
+GitSubmitHandler	git5_proxy.py	/^class GitSubmitHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):$/;"	c
+PORT	gfs.py	/^PORT = 8080$/;"	v
+PORT	git5_proxy.py	/^PORT = 10080$/;"	v
+SimpleHTTPServer	gfs.py	/^import SimpleHTTPServer$/;"	i
+SimpleHTTPServer	git5_proxy.py	/^import SimpleHTTPServer$/;"	i
+decode_url	git5_proxy.py	/^	decode_url = urllib.unquote_plus(self.path[idx + 1:])$/;"	v	class:GitSubmitHandler
+do_GET	gfs.py	/^    def do_GET(self):$/;"	m	class:GitSubmitHandler
+do_GET	git5_proxy.py	/^    def do_GET(self):$/;"	m	class:GitSubmitHandler
+getResp	git5_proxy.py	/^    def getResp(self):$/;"	m	class:GitSubmitHandler
+getURLMethod	git5_proxy.py	/^    def getURLMethod(self):$/;"	m	class:GitSubmitHandler
+getURLParameter	git5_proxy.py	/^    def getURLParameter(self):$/;"	m	class:GitSubmitHandler
+getURLParameters	git5_proxy.py	/^    def getURLParameters(self):$/;"	m	class:GitSubmitHandler
+idx	git5_proxy.py	/^	idx = self.path.rfind('?')$/;"	v	class:GitSubmitHandler
+result	git5_proxy.py	/^	result = [""]$/;"	v	class:GitSubmitHandler
+runCommand	gfs.py	/^def runCommand(exe):$/;"	f
+runCommand	git5_proxy.py	/^def runCommand(exe):$/;"	f
+shell_path	gfs.py	/^shell_path = "\/home\/weigangqiu\/git\/test\/"$/;"	v
+shell_path	git5_proxy.py	/^shell_path = ".\/shellscript\/"$/;"	v
+startServer	gfs.py	/^def startServer():$/;"	f
+startServer	git5_proxy.py	/^def startServer():$/;"	f
+subprocess	gfs.py	/^import subprocess$/;"	i
+subprocess	git5_proxy.py	/^import subprocess$/;"	i
+sync_time	git5_proxy.py	/^sync_time = " none"$/;"	v
+temp	git5_proxy.py	/^		temp = [""]$/;"	v	class:GitSubmitHandler
+time	git5_proxy.py	/^import time$/;"	i
+urllib	git5_proxy.py	/^import urllib$/;"	i
+urlparse	git5_proxy.py	/^from urlparse import urlparse$/;"	i

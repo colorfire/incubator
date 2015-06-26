@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>匿名俱乐部-私密空间</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-6 col-md-offset-3"><h1>匿名俱乐部</h1></div>
+      <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="jumbotron">
+            <span>我想到一件事情</span>
+            <!-- favorite section -->
+            <div style="float: right;">
+              <span class="addone1">1</span>
+              <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="jumbotron">
+            <span>我想到一件事情</span>
+            <!-- favorite section -->
+            <div style="float: right;">
+              <span class="addone2">1</span>
+              <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">声明：</div>
+            <div class="panel-body">
+              <p>这是一个私密站点，既然是私密的就不会记录IP，不会记录手机号，不对用户做任何性质的记录。当然我们也保证所有人所发的信息也是私密的 ：）</p>
+            </div>
+          </div>
+        </div></div>
+        </div><!-- end container -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(".glyphicon-thumbs-up").click(function() {
+        $(".addone1").html("2");
+        });
+        $(".glyphicon-thumbs-down").click(function() {
+        $(".addone1").html("1");
+        });
+        </script>
+      </body>
+    </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport"content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="世界杯 2014 赛程表">
+    <meta name="description" content="世界杯 2014 赛程表">
+    <title>世界杯2014 赛程表</title>
+    <link href="img/favicon.ico" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" />
+    <link href="img/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="img/favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="img/favicon.ico" rel="apple-touch-icon">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .time{
+            color: #999;
+            text-align: center;
+            /*width: 100px;*/
+            max-width: 100px !important;
+            line-height: 25px;
+        }
+        .from{
+            text-align: right;
+            max-width: 220px;
+        }
+        .to{
+            text-align: left;
+        }
+        .to img{
+            margin-right: 10px;
+        }
+        .from img{
+            margin-left: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="page-header">
+        <h3>2014 世界杯 <span class="label label-default">详情</span></h3>
+      </div>
+      <div class="wc-game-schedule-section">
+        <div class="wc-game-schedule-title">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#">赛程表</a></li>
+            <li><a href="#">小组分组</a></li>
+            <li><a href="#">积分射手榜</a></li>
+          </ul>
+        </div>
+        <div id="wc-game-schedule" class="list-group">
+        </div>
+      </div>
+      <div class="footer">
+        <span>&copy; 2014 FIFA All rights reserved</span>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var teams = [
+        {'id':1, 'name':'阿尔及利亚', 'english':'Algeria', 'flag':'Alg.png'},
+        {'id':2, 'name':'阿根廷', 'english':'Argentina', 'flag':'Arg.png'},
+        {'id':3, 'name':'澳大利亚', 'english':'Australia', 'flag':'Aus.png'},
+        {'id':4, 'name':'比利时', 'english':'Belgium', 'flag':'Bel.png'},
+        {'id':5, 'name':'波黑', 'english':'Bosnia-Herzegovina', 'flag':'Bih.png'},
+        {'id':6, 'name':'巴西', 'english':'Brazil', 'flag':'Bra.png'},
+        {'id':7, 'name':'喀麦隆', 'english':'Cameroon', 'flag':'Cmr.png'},
+        {'id':8, 'name':'智利', 'english':'Chile', 'flag':'Chi.png'},
+        {'id':9, 'name':'哥伦比亚', 'english':'Colombia', 'flag':'Col.png'},
+        {'id':10, 'name':'哥斯达黎加', 'english':'Costa Rica', 'flag':'Crc.png'},
+        {'id':11, 'name':'科特迪瓦', 'english':'Côte d\'Ivoire', 'flag':'Civ.png'},
+        {'id':12, 'name':'克罗地亚', 'english':'Croatia', 'flag':'Cro.png'},
+        {'id':13, 'name':'厄瓜多尔', 'english':'Ecuador', 'flag':'Ecu.png'},
+        {'id':14, 'name':'英格兰', 'english':'England', 'flag':'Eng.png'},
+        {'id':15, 'name':'法国', 'english':'France', 'flag':'Fra.png'},
+        {'id':16, 'name':'德国', 'english':'Germany', 'flag':'Ger.png'},
+        {'id':17, 'name':'加纳', 'english':'Ghana', 'flag':'Gha.png'},
+        {'id':18, 'name':'希腊', 'english':'Greece', 'flag':'Gre.png'},
+        {'id':19, 'name':'洪都拉斯', 'english':'Honduras', 'flag':'Hon.png'},
+        {'id':20, 'name':'伊朗', 'english':'Iran', 'flag':'Irn.png'},
+        {'id':21, 'name':'意大利', 'english':'Italy', 'flag':'Ita.png'},
+        {'id':22, 'name':'日本', 'english':'Japan', 'flag':'Jap.png'},
+        {'id':23, 'name':'韩国', 'english':'Korea Republic', 'flag':'Kor.png'},
+        {'id':24, 'name':'墨西哥', 'english':'Mexico', 'flag':'Mex.png'},
+        {'id':25, 'name':'荷兰', 'english':'Netherlands', 'flag':'Ned.png'},
+        {'id':26, 'name':'尼日利亚', 'english':'Nigeria', 'flag':'Nig.png'},
+        {'id':27, 'name':'葡萄牙', 'english':'Portugal', 'flag':'Por.png'},
+        {'id':28, 'name':'俄罗斯', 'english':'Russia', 'flag':'Rus.png'},
+        {'id':29, 'name':'西班牙', 'english':'Spain', 'flag':'Spa.png'},
+        {'id':30, 'name':'瑞士', 'english':'Switzerland', 'flag':'Swi.png'},
+        {'id':31, 'name':'乌拉圭', 'english':'Uruguay', 'flag':'Uru.png'},
+        {'id':32, 'name':'美国', 'english':'USA','flag':'USA.png'},
+    ];
+
+    var matches = [
+        {'id':1,'week':'周五','date': '6月13日','time':'4:00','from':'Brazil','to':'Croatia','place':'Sao Paulo'},
+        {'id':2,'week':'周六','date': '6月14日','time':'0:00','from':'Mexico','to':'Cameroon','place':'Natal'},
+        {'id':3,'week':'周六','date': '6月14日','time':'3:00','from':'Spain','to':'Netherlands','place':'Salvador'},
+        {'id':4,'week':'周六','date': '6月14日','time':'6:00','from':'Chile','to':'Australia','place':'Curitiba'},
+        {'id':5,'week':'周日','date': '6月15日','time':'0:00','from':'Colombia','to':'Greece','place':'Belo Horizonte'},
+        {'id':6,'week':'周日','date': '6月15日','time':'3:00','from':'Uruguay','to':'Costa Rica','place':'Fortaleza'},
+        {'id':7,'week':'周日','date': '6月15日','time':'6:00','from':'England','to':'Italy','place':'Manaus'},
+        {'id':8,'week':'周日','date': '6月15日','time':'9:00','from':'Côte d\'Ivoire','to':'Japan','place':'Recife'},
+        {'id':9,'week':'周一','date': '6月16日','time':'0:00','from':'Switzerland','to':'Ecuador','place':'Brasilia'},
+        {'id':10,'week':'周一','date': '6月16日','time':'3:00','from':'France','to':'Honduras','place':'Porto Alegre'},
+        {'id':11,'week':'周一','date': '6月16日','time':'6:00','from':'Argentina','to':'Bosnia-Herzegovina','place':'Rio De Janeiro'},
+        {'id':12,'week':'周二','date': '6月17日','time':'0:00','from':'Germany','to':'Portugal','place':'Salvador'},
+        {'id':13,'week':'周二','date': '6月17日','time':'3:00','from':'Iran','to':'Nigeria','place':'Curitiba'},
+        {'id':14,'week':'周二','date': '6月17日','time':'6:00','from':'Ghana','to':'USA','place':'Natal'},
+        {'id':15,'week':'周三','date': '6月18日','time':'0:00','from':'Belgium','to':'Algeria','place':'Belo Horizonte'},
+        {'id':16,'week':'周三','date': '6月18日','time':'3:00','from':'Brazil','to':'Mexico','place':'Fortaleza'},
+        {'id':17,'week':'周三','date': '6月18日','time':'6:00','from':'Russia','to':'Korea Republic','place':'Cuiaba'},
+        {'id':18,'week':'周四','date': '6月19日','time':'0:00','from':'Australia','to':'Netherlands','place':'Porto Alegre'},
+        {'id':19,'week':'周四','date': '6月19日','time':'6:00','from':'Cameroon','to':'Croatia','place':'Manaus'},
+        {'id':20,'week':'周四','date': '6月19日','time':'3:00','from':'Spain','to':'Chile','place':'Rio De Janeiro'},
+        {'id':21,'week':'周五','date': '6月20日','time':'0:00','from':'Colombia','to':'Côte d\'Ivoire','place':'Brasilia'},
+        {'id':22,'week':'周五','date': '6月20日','time':'3:00','from':'Uruguay','to':'England','place':'Sao Paulo'},
+        {'id':23,'week':'周五','date': '6月20日','time':'6:00','from':'Japan','to':'Greece','place':'Natal'},
+        {'id':24,'week':'周六','date': '6月21日','time':'0:00','from':'Italy','to':'Costa Rica','place':'Recife'},
+        {'id':25,'week':'周六','date': '6月21日','time':'3:00','from':'Switzerland','to':'France','place':'Salvador'},
+        {'id':26,'week':'周六','date': '6月21日','time':'6:00','from':'Honduras','to':'Ecuador','place':'Curitiba'},
+        {'id':27,'week':'周日','date': '6月22日','time':'0:00','from':'Argentina','to':'Iran','place':'Belo Horizonte'},
+        {'id':28,'week':'周日','date': '6月22日','time':'3:00','from':'Germany','to':'Ghana','place':'Fortaleza'},
+        {'id':29,'week':'周日','date': '6月22日','time':'6:00','from':'Nigeria','to':'Bosnia-Herzegovina','place':'Cuiaba'},
+        {'id':30,'week':'周一','date': '6月23日','time':'3:00','from':'Korea Republic','to':'Algeria','place':'Porto Alegre'},
+        {'id':31,'week':'周一','date': '6月23日','time':'6:00','from':'USA','to':'Portugal','place':'Manaus'},
+        {'id':32,'week':'周一','date': '6月23日','time':'0:00','from':'Belgium','to':'Russia','place':'Rio De Janeiro'},
+        {'id':33,'week':'周二','date': '6月24日','time':'0:00','from':'Australia','to':'Spain','place':'Curitiba'},
+        {'id':34,'week':'周二','date': '6月24日','time':'0:00','from':'Netherlands','to':'Chile','place':'Sao Paulo'},
+        {'id':35,'week':'周二','date': '6月24日','time':'4:00','from':'Cameroon','to':'Brazil','place':'Brasilia'},
+        {'id':36,'week':'周二','date': '6月24日','time':'4:00','from':'Croatia','to':'Mexico','place':'Recife'},
+        {'id':37,'week':'周三','date': '6月25日','time':'0:00','from':'Italy','to':'Uruguay','place':'Natal'},
+        {'id':38,'week':'周三','date': '6月25日','time':'0:00','from':'Costa Rica','to':'England','place':'Belo Horizonte'},
+        {'id':39,'week':'周三','date': '6月25日','time':'4:00','from':'Japan','to':'Colombia','place':'Cuiaba'},
+        {'id':40,'week':'周三','date': '6月25日','time':'4:00','from':'Greece','to':'Côte d\'Ivoire','place':'Fortaleza'},
+        {'id':41,'week':'周四','date': '6月26日','time':'0:00','from':'Nigeria','to':'Argentina','place':'Porto Alegre'},
+        {'id':42,'week':'周四','date': '6月26日','time':'0:00','from':'Bosnia-Herzegovina','to':'Iran','place':'Salvador'},
+        {'id':43,'week':'周四','date': '6月26日','time':'4:00','from':'Honduras','to':'Switzerland','place':'Manaus'},
+        {'id':44,'week':'周四','date': '6月26日','time':'4:00','from':'Ecuador','to':'France','place':'Rio De Janeiro'},
+        {'id':45,'week':'周五','date': '6月27日','time':'0:00','from':'USA','to':'Germany','place':'Recife'},
+        {'id':46,'week':'周五','date': '6月27日','time':'0:00','from':'Portugal','to':'Ghana','place':'Brasilia'},
+        {'id':47,'week':'周五','date': '6月27日','time':'4:00','from':'Korea Republic','to':'Belgium','place':'Sao Paulo'},
+        {'id':48,'week':'周五','date': '6月27日','time':'4:00','from':'Algeria','to':'Russia','place':'Curitiba'},
+    ];
+
+    var current_day = new Date().getDate();
+    var next_match_day = '';
+
+    $.each(matches, function(index, item){
+        var match_day = item.date.substr(2,2);
+        if (next_match_day != item.date){
+            $("#wc-game-schedule").append('<a name="'+match_day+'" class="list-group-item active"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+ item.date + ' ' + item.week +'</div></div></a>');
+            next_match_day = item.date;
+        }
+        var team1 = '';
+        $.each(teams, function(idx, team){if (item.from == team.english){team1=team;}})
+        var team2 = '';
+        $.each(teams, function(idx, team){if (item.to == team.english){team2=team;}})
+        var current_style = '';
+        if (current_day == match_day) current_style = 'list-group-item-success';
+        template =
+        '<a class="list-group-item '+current_style+'"><div class="row"><div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 from">'+team1.name+'\
+            <img class="schedule-flag" src="img/'+team1.flag+'"></div>\
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 time">'+item.time+'</div>\
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 to">\
+            <img class="schedule-flag" src="img/'+team2.flag+'">'+team2.name+'</div></div></a>';
+        $("#wc-game-schedule").append(template);
+    });
+    
+    /**
+     * set current match date.
+     */
+    document.location.hash = current_day;
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52448175-1', 'auto');
+    ga('send', 'pageview');
+    ga('send', 'pageview', {
+      'dimension15':  'My Custom Dimension'
+    });
+    ga('send', 'event', 'category', 'action', {
+      'metric18': 8000
+    });
+    ga('send', 'event', 'category', 'action', {
+      'metric19': 24.99
+    });
+    ga('set', 'dimension5', 'custom data');
+    ga('set', {
+      'dimension5': 'custom dimension data',
+      'metric5': 111
+    });
+    </script>
+    <!-- End Google Analytics -->
+  </body>
+</html>

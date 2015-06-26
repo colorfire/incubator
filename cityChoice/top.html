@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>265 test page</title>
+    <script src="../../closure-library/closure/goog/base.js"></script>
+    <script src="weather.js"></script>
+    <link ref="stylesheet" href="../../closure-library/closure/goog/css/common.css"/>
+    <link rel="stylesheet" href="../../closure-library/closure/goog/css/hovercard.css">
+    <link href="../../closure-library/closure/goog/css/menu.css" rel="stylesheet"></link>
+    <link href="../../closure-library/closure/goog/css/menuitem.css" rel="stylesheet"></link>
+    <link href="../../closure-library/closure/goog/css/menuseparator.css" rel="stylesheet"></link>
+    <link href="../../closure-library/closure/goog/css/menubutton.css" rel="stylesheet"></link>
+    <style type="text/css">
+    .dbg-sev{color:#F00}.dbg-w{color:#C40}.dbg-sh{font-weight:bold;color:#000}.dbg-i{color:#444}.dbg-f{color:#999}.dbg-ev{color:#0A0}.dbg-m{color:#990}.logmsg{border-bottom:1px solid #CCC;padding:2px}.logsep{background-color: #8C8;}.logdiv{border:1px solid #CCC;background-color:#FCFCFC;font:medium monospace}
+    </style>
+</head>
+<body onload="onload()">
+    <div>
+        <input type="button" id="weather_city_choose" name="weather_city_choose" value="定制"></input>
+    </div>
+
+    <div style="display:none;" class="departures" id="weather_start_div">
+        <div>
+            <select name="weather_province_list_selector" id="weather_province_list_selector" class="choose_province"></select>
+            <select name="weather_city_list_selector" id="weather_city_list_selector" class="choose_region"></select>
+        </div>
+        <h4 class="departures_title">从下列城市选择</h4>
+    </div>
+</body>
+</html>
